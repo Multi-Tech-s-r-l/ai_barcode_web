@@ -17,7 +17,9 @@ dependencies:
     sdk: flutter
   ai_barcode_platform_interface: ^3.0.1
   # flutter create QRCode
-  qr_flutter: ^4.0.0
+  qr_flutter:
+    git:
+      url: https://github.com/Multi-Tech-s-r-l/qr.flutter
   universal_html: ^2.0.8
 
 dev_dependencies:

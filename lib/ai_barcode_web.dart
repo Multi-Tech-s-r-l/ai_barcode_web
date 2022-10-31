@@ -116,13 +116,30 @@ class AiBarcodeCreatorWebPlugin extends AiBarcodeCreatorPlatform {
 
   @override
   Widget buildCreatorView(BuildContext context) {
-    QrImage qrImage = QrImage(
-      data: AiBarcodeCreatorPlatform.instance.initialValueOfCreator,
-      version: QrVersions.auto,
-      size: 200.0,
+    return CustomPaint(
+      size: Size.square(200),
+      painter: QrPainter(
+        data: AiBarcodeCreatorPlatform.instance.initialValueOfCreator,
+        version: QrVersions.auto,
+        /*eyeStyle: QrEyeStyle(
+          eyeShape: QrEyeShape.square,
+          color: widget.eyeColor,
+        ),*/
+     /*   dataModuleStyle: QrDataModuleStyle(
+          dataModuleShape: QrDataModuleShape.circle,
+          color: widget.moduleColor,
+        ),*/
+        // size: 320.0,
+       /* embeddedImage: snapshot.data,
+        embeddedImageStyle: QrEmbeddedImageStyle(
+          size: const Size.square(40),
+          color: Theme.of(context).colorScheme.primary,
+        ),*/
+      ),
     );
 
-    return qrImage;
+
+    //return qrImage;
   }
 
   @override
